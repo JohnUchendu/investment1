@@ -23,9 +23,9 @@ export function Navbar() {
             <Link href="/" className="transition-colors hover:text-foreground/80">
               About
             </Link>
-            <Link href="/" className="transition-colors hover:text-foreground/80">
+            {/* <Link href="/" className="transition-colors hover:text-foreground/80">
               Pricing
-            </Link>
+            </Link> */}
           </nav>
           <div className="ml-4">
             {session ? (
