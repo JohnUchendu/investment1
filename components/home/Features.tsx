@@ -26,13 +26,13 @@ export function Features() {
               Our aim is financial growth not stability. <br /> "We as humans
               always seek for more even at the best paying jobs... sevenpoints
               has just the path to follow"
-              <br />
+              <br /><br />
               Our goal are aligned wuth finding the best jobs your money can
-              work for "One common factor among the wealthy is they make money
-              their servants, let's help you build that mindset" Our Traders
+              work for <br /><br />"One common factor among the wealthy is they make money
+              their servants, let's help you build that mindset"<br /><br /> Our Traders
               boost years of winning track record. <br />
               <br /> We have no interest hanging onto profits.
-              <br />
+              <br /><br />
               "Probably the best part, you get your ROI directly back to
               whatever mode of payment suits you best"
             </p>
