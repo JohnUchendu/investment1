@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <footer className="border-t bg-white">
+    <footer className="border-t bg-white text-black">
       <div className="container flex flex-col justify-between gap-8 py-10 md:flex-row md:items-start md:py-12">
         
         {/* Left: Brand */}
