@@ -22,9 +22,10 @@ export function Footer() {
         {/* Right: Contact Info */}
         <div className="flex flex-col items-center gap-2 text-sm md:items-start">
           <span className="font-medium">Contact</span>
-          <p>Email: contact@sevenpointstrading.com</p>
-          <p>Address: 123 Wall Street, Baltimore, USA</p>
-          <p>Phone: +1 (555) 123-4567</p>
+          {/* <p>Email: contact@sevenpointstrading.com</p> */}
+          <p>New York City 150 East 52nd Street, 3r d Floor, New York, NY 10022
+          </p>
+          <p>Phone: +1 (772) 308-4681</p>
         </div>
 
       </div>

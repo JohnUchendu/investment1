@@ -24,10 +24,10 @@ export const authOptions: NextAuthOptions = {
         // Hardcoded credentials for demo
         const hardcodedUser = {
           id: "1",
-          name: "Demo User",
+          name: "Frank Muller",
           email: "demo@forex.com",
           password: "forex123",
-          balance: 12500.75,
+          balance: 1200.75,
           currency: "USD"
         };
 
