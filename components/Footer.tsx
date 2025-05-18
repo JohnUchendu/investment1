@@ -16,10 +16,8 @@ export function Footer() {
                   priority
                 />
                 </div>
-          <h2 className="text-lg font-semibold">SevenPointTrading</h2>
-          <p className="text-sm text-gray-500 mt-2">
-            &copy; {new Date().getFullYear()} SevenPointTrading. All rights reserved.
-          </p>
+          <h2 className="text-lg font-semibold">SevenPointsTrading</h2>
+         
         </div>
 
         {/* Center: Quick Links */}
@@ -36,7 +34,9 @@ export function Footer() {
           <p>New York City 150 East 52nd Street, 3rd Floor, New York, NY 10022</p>
           <p>Phone: +1 (772) 308-4681</p>
         </div>
-
+ <p className="text-sm text-center text-gray-500 mt-2">
+            &copy; {new Date().getFullYear()} SevenPointsTrading. All rights reserved.
+          </p>
       </div>
     </footer>
   );
