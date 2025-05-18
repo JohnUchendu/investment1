@@ -1,8 +1,9 @@
 import React from 'react'
+import MaintenancePage from './Maintenance'
 
 const Verification = () => {
   return (
-    <div>Verification</div>
+    <div><MaintenancePage/></div>
   )
 }
 

@@ -1,30 +1,28 @@
 export function Footer() {
   return (
-    <footer className="border-t bg-white text-black">
-      <div className="container flex flex-col justify-between gap-8 py-10 md:flex-row md:items-start md:py-12">
+    <footer className="border-t bg-white text-black mt-10">
+      <div className="max-w-7xl mx-auto w-full px-6 py-12 flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
         
         {/* Left: Brand */}
-        <div className="flex flex-col items-center md:items-start">
+        <div className="text-left">
           <h2 className="text-lg font-semibold">SevenPointTrading</h2>
-          <p className="text-sm text-muted-foreground mt-2 text-center md:text-left">
+          <p className="text-sm text-gray-500 mt-2">
             &copy; {new Date().getFullYear()} SevenPointTrading. All rights reserved.
           </p>
         </div>
 
         {/* Center: Quick Links */}
-        <div className="flex flex-col items-center gap-2 text-sm md:items-start">
-          <span className="font-medium">Quick Links</span>
-          <a href="/" className="hover:underline">Home</a>
-          <a href="/Home" className="hover:underline">Contact</a>
-          <a href="/careers" className="hover:underline">Careers</a>
+        <div className="text-left space-y-1 text-sm">
+          <span className="font-medium block mb-1">Quick Links</span>
+          <a href="/" className="hover:underline block">Home</a>
+          <a href="/Home" className="hover:underline block">Contact</a>
+          <a href="/careers" className="hover:underline block">Careers</a>
         </div>
 
         {/* Right: Contact Info */}
-        <div className="flex flex-col items-center gap-2 text-sm md:items-start">
-          <span className="font-medium">Contact</span>
-          {/* <p>Email: contact@sevenpointstrading.com</p> */}
-          <p>New York City 150 East 52nd Street, 3r d Floor, New York, NY 10022
-          </p>
+        <div className="text-left space-y-1 text-sm">
+          <span className="font-medium block mb-1">Contact</span>
+          <p>New York City 150 East 52nd Street, 3rd Floor, New York, NY 10022</p>
           <p>Phone: +1 (772) 308-4681</p>
         </div>
 

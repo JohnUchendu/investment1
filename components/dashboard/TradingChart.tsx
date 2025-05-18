@@ -145,10 +145,11 @@
 // }
 
 import React from 'react'
+import MaintenancePage from './Maintenance'
 
 const TradingChart = () => {
   return (
-    <div>...Loading Charts</div>
+    <div><MaintenancePage/></div>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import MaintenancePage from './Maintenance'
 
 const EditProfiles = () => {
   return (
-    <div>EditProfiles</div>
+    <div><MaintenancePage/></div>
   )
 }
 

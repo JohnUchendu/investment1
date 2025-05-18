@@ -1,10 +1,10 @@
 import React from 'react'
 import MaintenancePage from './Maintenance'
 
-const Withdraw = () => {
+const Deposits = () => {
   return (
     <div><MaintenancePage/></div>
   )
 }
 
-export default Withdraw
+export default Deposits
