@@ -119,6 +119,9 @@ export function Navbar() {
             >
               Sign In
             </Link>
+
+
+            
           </div>
 
           {/* Mobile menu button */}
