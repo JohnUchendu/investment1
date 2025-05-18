@@ -33,7 +33,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative w-full bg-blue-500 h-screen py-12 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
+    <section className="relative w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
       {/* Particle Background */}
       <Particles
         id="tsparticles"
@@ -102,7 +102,7 @@ export function Hero() {
       {/* Content */}
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-6 text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
             Empower Your Wealth with Our Investment Platform
           </h1>
 

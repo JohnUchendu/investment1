@@ -158,10 +158,10 @@ export default function DashboardLayout({ user }: DashboardLayoutProps) {
   return (
     <>
       <MarketTicker />
-      <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+      <div className="flex flex-col md:flex-row h-screen pt-3 bg-gray-100">
         {/* Mobile Header */}
         <div className="md:hidden bg-blue-800 text-white p-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold">Welcome!</h2>
+          <h2 className="text-xl font-bold">Welcome Frank!</h2>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 focus:outline-none"
@@ -178,9 +178,9 @@ export default function DashboardLayout({ user }: DashboardLayoutProps) {
       `}
         >
           <div className="flex justify-between items-center mb-6 md:mb-8">
-            <h2 className="text-xl font-bold hidden md:block">
+            {/* <h2 className="text-xl font-bold hidden md:block">
               Seven Points Trading
-            </h2>
+            </h2> */}
             {isMobile && (
               <button
                 onClick={() => setIsMobileMenuOpen(false)}

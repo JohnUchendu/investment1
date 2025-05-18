@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="border-t bg-white text-black mt-10">
@@ -5,6 +7,15 @@ export function Footer() {
         
         {/* Left: Brand */}
         <div className="text-left">
+           <div className="relative h-8 w-8">
+                <Image
+                  src="/seven.png" // Update with your logo path
+                  alt="seven points trading"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+                </div>
           <h2 className="text-lg font-semibold">SevenPointTrading</h2>
           <p className="text-sm text-gray-500 mt-2">
             &copy; {new Date().getFullYear()} SevenPointTrading. All rights reserved.
