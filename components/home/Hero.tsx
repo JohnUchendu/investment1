@@ -78,13 +78,14 @@ export function Hero() {
               speed: 1,
               straight: false,
             },
-            number: {
-              density: {
-                enable: true,
-                value_area: 800,
-              },
-              value: 50,
-            },
+           number: {
+  value: 50,
+  density: {
+    enable: true,
+    width: 800, // formerly value_area or area
+  },
+},
+
             opacity: {
               value: 0.3,
             },
