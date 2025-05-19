@@ -202,8 +202,8 @@ export function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <header className="fixed w-full z-50 text-gray-400 rounded-3xl bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="fixed w-full z-50 text-gray-400 rounded-4xl md:pt-10 md:p-5 bg-white shadow-sm">
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -218,7 +218,7 @@ export function Navbar() {
                     priority
                   />
                 </div>
-                <span className="ml-2 text-xl font-semibold hidden sm:inline">
+                <span className="ml-2 text-4xl font-semibold hidden sm:inline">
                   Seven Points Trading
                 </span>
               </div>
@@ -226,10 +226,10 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center text-2xl space-x-4">
             <Link
               href="/"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
+              className={`px-3 py-2 rounded-md  font-medium ${
                 pathname === "/"
                   ? "bg-gray-100 text-gray-900"
                   : "text-gray-600 hover:text-gray-900"
@@ -239,7 +239,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/about"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
+              className={`px-3 py-2 rounded-md font-medium ${
                 pathname === "/about"
                   ? "bg-gray-100 text-gray-900"
                   : "text-gray-600 hover:text-gray-900"
@@ -249,7 +249,7 @@ export function Navbar() {
             </Link>
             <Link
               href="/careers"
-              className={`px-3 py-2 rounded-md text-sm font-medium ${
+              className={`px-3 py-2 rounded-md font-medium ${
                 pathname === "/careers"
                   ? "bg-gray-100 text-gray-900"
                   : "text-gray-600 hover:text-gray-900"
@@ -271,7 +271,7 @@ export function Navbar() {
             ) : (
               <Link
                 href="/login"
-                className="px-4 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-gray-900"
+                className="px-4 py-2 rounded-md  font-medium text-gray-600 hover:text-gray-900"
               >
                 Sign In
               </Link>

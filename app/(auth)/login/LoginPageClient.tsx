@@ -150,8 +150,8 @@ export default function LoginPageClient() {
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "demo@forex.com",
-      password: "forex123",
+      email: "",
+      password: "",
     },
   });
 
@@ -171,12 +171,12 @@ export default function LoginPageClient() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md p-6 shadow-md bg-blue-700 rounded-lg">
+      <Card className="w-full max-w-md p-6 shadow-md bg-blue-500 rounded-lg">
         <CardHeader>
           <CardTitle className="text-2xl text-center">
             Login to Your Account
           </CardTitle>
-          <CardDescription className="text-center">
+          <CardDescription className="text-center text-gray-200">
             Enter your credentials to access your dashboard
           </CardDescription>
         </CardHeader>
@@ -193,7 +193,7 @@ export default function LoginPageClient() {
               <Input
                 id="email"
                 type="email"
-                placeholder="demo@forex.com"
+                placeholder="youremail@email.com"
                 {...register("email")}
               />
               {errors.email && (
@@ -205,7 +205,7 @@ export default function LoginPageClient() {
               <Input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="password"
                 {...register("password")}
               />
               {errors.password && (
@@ -214,12 +214,12 @@ export default function LoginPageClient() {
                 </p>
               )}
             </div>
-            <Button type="submit" className="w-full pointer">
+            <Button type="submit" className="w-full pointer bg-gray-200">
               Sign In
             </Button>
           </form>
           <div className="mt-4 text-center text-sm text-muted-foreground">
-            Demo credentials: demo@forex.com / forex123
+            {/* Demo credentials: demo@forex.com / forex123 */}
           </div>
         </CardContent>
       </Card>

@@ -107,8 +107,8 @@ export const authOptions: NextAuthOptions = {
         const hardcodedUser = {
           id: "1",
           name: "Frank Muller",
-          email: "demo@forex.com",
-          password: "forex123",
+          email: "frankmuller@yahoo.co.uk",
+          password: "llyodsX20x",
           balance: 1977840.75,
           currency: "USD"
         };

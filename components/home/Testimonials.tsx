@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const testimonials = [
@@ -31,36 +34,71 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-200 dark:text-gray-600">
-      <div className=" px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">
+      <div className="px-4 md:px-6">
+        <motion.div
+          className="flex flex-col items-center justify-center space-y-4 text-center"
+          initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 5.0 }}
+             viewport={{ once: true }}
+        >
+          <motion.div
+            className="space-y-2"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+          >
+            <h2 className="text-5xl sm:text-6xl md:text-8xl lg:text-8xl font-bold tracking-tighter ">
               What Our Clients Say
             </h2>
-            <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-600">
-              Don&apos;t just take our word for it. Here&apos;s what our
-              community has to say about their experience.
-            </p>
-          </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
+          </motion.div>
+
+          <motion.p
+            className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-600"
+            variants={{
+              hidden: { opacity: 0, y: 10 },
+              visible: { opacity: 1, y: 0 },
+            }}
+             viewport={{ once: true }}
+          >
+            Don&apos;t just take our word for it. Here&apos;s what our
+            community has to say about their experience.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ staggerChildren: 0.2 }}
+          viewport={{ once: true }}
+        >
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="h-full">
-              <CardHeader className="flex flex-row items-center gap-4">
-                <div className="flex items-center space-x-4">
-                  <div>
-                    <h4 className="font-medium">{testimonial.name}</h4>
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+            >
+              <Card className="h-full bg-black">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  <div className="flex items-center  space-x-4">
+                    <div>
+                      <h4 className="font-medium">{testimonial.name}</h4>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <blockquote className="text-gray-500 dark:text-gray-400">
-                  "{testimonial.content}"
-                </blockquote>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <blockquote className="text-gray-500 dark:text-gray-400">
+                    "{testimonial.content}"
+                  </blockquote>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

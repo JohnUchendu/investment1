@@ -1,5 +1,5 @@
-import { Button } from "../ui/button";
-import Link from "next/link";
+// import { Button } from "../ui/button";
+// import Link from "next/link";
 
 export function CTA() {
   return (
@@ -15,7 +15,7 @@ export function CTA() {
             </p>
           </div>
           <div className="space-x-4">
-            <Link href="/login">
+            {/* <Link href="/login">
               <Button variant="secondary" size="lg">
                 Get Started Now
               </Button>
@@ -24,7 +24,7 @@ export function CTA() {
               <Button variant="outline" size="lg" className="text-primary-foreground">
                 Demo Account
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

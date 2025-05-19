@@ -9,11 +9,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Seven Points Trading - Professional Forex Trading",
-  description: "Advanced forex trading platform for professionals"
+  description: "Advanced forex trading platform for professionals",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
@@ -21,9 +21,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
-          <div className="">
+          <div className="bg-gray-200">
             <Navbar />
-            
+
             <main className="">{children}</main>
             <Footer />
           </div>
