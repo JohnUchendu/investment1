@@ -74,8 +74,6 @@
 //   return <div ref={chartContainerRef} className="w-full h-[400px]" />;
 // }
 
-
-
 // "use client";
 
 // import { useEffect, useRef } from "react";
@@ -159,13 +157,15 @@
 
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  FiTrendingUp, 
-  FiDollarSign, 
+import {
+  FiTrendingUp,
+  FiDollarSign,
   FiCalendar,
-  FiPieChart
+  FiPieChart,
 } from "react-icons/fi";
 import TradingViewChartWidget from "./TradingViewChartWidget";
+import Recharts from "./Recharts";
+import Chartjs from "./Chartjs";
 
 export default function TradingChart() {
   const [selectedAsset, setSelectedAsset] = useState("BTC");
@@ -175,128 +175,125 @@ export default function TradingChart() {
     { symbol: "BTC", name: "Bitcoin", value: 45218.32, change: +2.4 },
     { symbol: "XRP", name: "Ripple", value: 0.5421, change: -0.8 },
     // { symbol: "ETH", name: "Ethereum", value: 2415.67, change: +1.2 },
-   
   ];
 
   const performanceData = {
     today: +1.2,
     week: +5.7,
-    
   };
 
   return (
-    <div className="space-y-6 p-4 text-white">
+    <div className="space-y-6 p-4 text-black">
       {/* Top Row - 4 Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Assets Card */}
-        <Card className="bg-blue-800 text-white text-xs sm:text-sm gap-2">
+        <Card className="bg-white-800 text-gray-500 text-xs sm:text-sm gap-2">
           <CardHeader className="flex flex-row items-center justify-between pb-2 ">
-            <CardTitle className="text-sm">
-              Assets
-            </CardTitle>
+            <CardTitle className="text-sm font-light">Assets</CardTitle>
             <FiPieChart className="h-4 w-4 text-white-500" />
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 {assets.map((asset) => (
-                  <div 
+                  <div
                     key={asset.symbol}
-                    className={`p-2 rounded-md cursor-pointer ${selectedAsset === asset.symbol ? 'bg-blue-800' : 'hover:bg-blue-500'}`}
+                    className={`p-2 rounded-md cursor-pointer ${
+                      selectedAsset === asset.symbol
+                        ? "bg-gray-200"
+                        : "hover:bg-gray-100"
+                    }`}
                     onClick={() => setSelectedAsset(asset.symbol)}
                   >
                     <div className="font-medium">{asset.symbol}</div>
                     <div className="text-xs sm:text-sm  font-bold">
                       ${asset.value.toLocaleString()}
                     </div>
-                    <div className={`text-xs ${asset.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {asset.change >= 0 ? '+' : ''}{asset.change}%
+                    <div
+                      className={`text-xs ${
+                        asset.change >= 0 ? "text-blue-500" : "text-red-500"
+                      }`}
+                    >
+                      {asset.change >= 0 ? "+" : ""}
+                      {asset.change}%
                     </div>
                   </div>
                 ))}
               </div>
               <div className="border-l pl-4 ">
-                {/* Placeholder for asset details component */}
-                <div className="text-sm text-white">
-                  {assets.find(a => a.symbol === selectedAsset)?.name} Details
+                <div className="text-sm text-gray-500">
+                  {assets.find((a) => a.symbol === selectedAsset)?.name} Gains
                 </div>
-                {/* You'll replace this with your actual asset details component */}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Performance Card */}
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm">
-              Performance
-            </CardTitle>
-            <FiTrendingUp className="h-4 w-4 text-gray-500" />
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="space-y-2">
-                  <div>
-                    <div className="text-xs text-gray-500">Today</div>
-                    <div className={`font-medium ${performanceData.today >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {performanceData.today >= 0 ? '+' : ''}{performanceData.today}%
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-xs text-gray-500">This Week</div>
-                    <div className={`font-medium ${performanceData.week >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {performanceData.week >= 0 ? '+' : ''}{performanceData.week}%
-                    </div>
-                  </div>
-                  <div>
-                    {/* <div className="text-xs text-gray-500">This Month</div> */}
-                    {/* <div className={`font-medium ${performanceData.month >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {performanceData.month >= 0 ? '+' : ''}{performanceData.month}%
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-              <div className="border-l pl-4">
-                {/* Placeholder for performance graph component */}
-                <div className="h-full flex items-center justify-center text-sm text-gray-500">
-                  Performance Graph
-                </div>
+                {/* Asset perfomance component */}
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Gains Card */}
-        <Card>
+        <Card className="bg-white-800 hover:border-blue-500 text-gray-500 text-xs sm:text-sm">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">
-              Gains
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Gains</CardTitle>
             <FiDollarSign className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <div className="text-2xl font-bold">$3,245.67</div>
-              <div className="text-sm text-green-500">+12.4% overall</div>
+              <div className="text-2xl font-bold">$333,245.67</div>
+              <div className="text-sm text-blue-500">+12.4% overall</div>
               <div className="text-xs text-gray-500">Since investment</div>
             </div>
           </CardContent>
         </Card>
+        {/* CHARTING */}
+        <Recharts />
+       {/* Performance */}
+      <CardContent>
+  <div className="space-y-4">
+    {/* Horizontal stats container */}
+    <div className="flex space-x-8">
+      <div>
+        <div className="text-xs text-gray-500">Today</div>
+        <div
+          className={`font-medium ${
+            performanceData.today >= 0 ? "text-blue-500" : "text-red-500"
+          }`}
+        >
+          {performanceData.today >= 0 ? "+" : ""}
+          {performanceData.today}%
+        </div>
+      </div>
+
+      <div>
+        <div className="text-xs text-gray-500">This Week</div>
+        <div
+          className={`font-medium ${
+            performanceData.week >= 0 ? "text-blue-500" : "text-red-500"
+          }`}
+        >
+          {performanceData.week >= 0 ? "+" : ""}
+          {performanceData.week}%
+        </div>
+      </div>
+    </div>
+
+    {/* Chart container full width */}
+    <div className="border-t pt-4 border-gray-200">
+      <Chartjs />
+    </div>
+  </div>
+</CardContent>
+
 
         {/* Maturity Card */}
-        <Card>
+        <Card className="bg-white-800 hover:border-blue-500 text-gray-500 text-xs sm:text-sm">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">
-              Maturity
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Maturity</CardTitle>
             <FiCalendar className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <div className="text-xl font-medium">Dec 15, 2024</div>
-              <div className="text-sm text-gray-600">124 days remaining</div>
+              <div className="text-xl font-bold">June 22, 2025</div>
+              <div className="text-sm text-gray-600">32 days remaining</div>
               <div className="text-xs text-blue-500">Auto-renewal enabled</div>
             </div>
           </CardContent>
@@ -304,14 +301,14 @@ export default function TradingChart() {
       </div>
 
       {/* Bottom Row - TradingView Chart Card */}
-      <Card className="w-full">
+      <Card className="w-full bg-gray-100 text-gray-500">
         <CardHeader>
           <CardTitle>Market Overview</CardTitle>
         </CardHeader>
         <CardContent className="h-[400px]">
           {/* Placeholder for TradingView component */}
           <div className="h-full flex items-center justify-center text-gray-500 border rounded-md">
-          <TradingViewChartWidget/>
+            <TradingViewChartWidget />
           </div>
         </CardContent>
       </Card>
