@@ -38,7 +38,7 @@ export function HeroParticles() {
   return (
     <section className=" w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
       {/* Particle Background */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
         
     <Particles
       id="tsparticles"
@@ -101,9 +101,8 @@ export function HeroParticles() {
       }}
     />
   );
-
-
 </div>
+
       {/* Content */}
       <div className=" px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-6 text-center max-w-4xl mx-auto">
