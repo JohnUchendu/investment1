@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+
+
+import { useCallback } from "react";
 import Particles from "@tsparticles/react";
+import type { Engine } from "@tsparticles/engine";
 import { loadFull } from "tsparticles";
 
 function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: number; duration?: number }) {
@@ -26,80 +30,79 @@ function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: numbe
   return <span>{count.toLocaleString()}</span>;
 }
 
-export function Hero() {
-  const particlesInit = async (main: any) => {
-    // you can initialize tsparticles instance (main) here, adding custom shapes or presets
-    await loadFull(main);
-  };
+export function HeroParticles() {
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadFull(engine);
+  }, []);
 
   return (
     <section className=" w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
       {/* Particle Background */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          fullScreen: { enable: false },
-          background: {
-            color: { value: "transparent" },
-          },
-          fpsLimit: 60,
-          interactivity: {
-            events: {
-              onHover: {
-                enable: true,
-                mode: "repulse",
-              },
-              
-            },
-            modes: {
-              repulse: {
-                distance: 100,
-                duration: 0.4,
-              },
+      <div aria-hidden="true" className="absolute inset-0 -z-10
+        
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      className="absolute inset-0 -z-10"
+      options={{
+        fullScreen: { enable: false },
+        background: {
+          color: { value: "transparent" },
+        },
+        fpsLimit: 60,
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: "repulse",
             },
           },
-          particles: {
-            color: { value: "#ffffff" },
-            links: {
-              color: "#ffffff",
-              distance: 150,
-              enable: true,
-              opacity: 0.2,
-              width: 1,
+          modes: {
+            repulse: {
+              distance: 100,
+              duration: 0.4,
             },
-            collisions: { enable: false },
-            move: {
-              // directions: "none",
-              enable: true,
-              outModes: "bounce",
-              random: false,
-              speed: 1,
-              straight: false,
+          },
+        },
+        particles: {
+          color: { value: "#ffffff" },
+          links: {
+            color: "#ffffff",
+            distance: 150,
+            enable: true,
+            opacity: 0.2,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            outModes: {
+              default: "bounce",
             },
-           number: {
-  value: 50,
-  density: {
-    enable: true,
-    width: 800, // formerly value_area or area
-  },
-},
+          },
+          number: {
+            value: 50,
+            density: {
+              enable: true,
+              width: 800,
+            },
+          },
+          opacity: {
+            value: 0.3,
+          },
+          shape: {
+            type: "circle",
+          },
+          size: {
+            value: { min: 1, max: 4 },
+          },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
 
-            opacity: {
-              value: 0.3,
-            },
-            shape: {
-              type: "circle",
-            },
-            size: {
-              value: { min: 1, max: 4 },
-            },
-          },
-          detectRetina: true,
-        }}
-        className="absolute inset-0 -z-10"
-      />
+
 </div>
       {/* Content */}
       <div className=" px-4 md:px-6 relative z-10">
