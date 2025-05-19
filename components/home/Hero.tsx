@@ -30,7 +30,7 @@ function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: numbe
   return <span>{count.toLocaleString()}</span>;
 }
 
-export function HeroParticles() {
+export function Hero() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
