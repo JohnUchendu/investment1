@@ -6,9 +6,8 @@ import Link from "next/link";
 
 
 import { useCallback } from "react";
-import Particles from "@tsparticles/react";
-import type { Engine } from "@tsparticles/engine";
-import { loadFull } from "tsparticles";
+
+
 
 function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: number; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -31,77 +30,9 @@ function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: numbe
 }
 
 export function Hero() {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
-  }, []);
 
   return (
-    <section className=" w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
-      {/* Particle Background */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10">
-        
-    <Particles
-      id="tsparticles"
-      init={particlesInit}
-      className="absolute inset-0 -z-10"
-      options={{
-        fullScreen: { enable: false },
-        background: {
-          color: { value: "transparent" },
-        },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: "repulse",
-            },
-          },
-          modes: {
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-          },
-        },
-        particles: {
-          color: { value: "#ffffff" },
-          links: {
-            color: "#ffffff",
-            distance: 150,
-            enable: true,
-            opacity: 0.2,
-            width: 1,
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            outModes: {
-              default: "bounce",
-            },
-          },
-          number: {
-            value: 50,
-            density: {
-              enable: true,
-              width: 800,
-            },
-          },
-          opacity: {
-            value: 0.3,
-          },
-          shape: {
-            type: "circle",
-          },
-          size: {
-            value: { min: 1, max: 4 },
-          },
-        },
-        detectRetina: true,
-      }}
-    />
-  );
-</div>
+
 
       {/* Content */}
       <div className=" px-4 md:px-6 relative z-10">
