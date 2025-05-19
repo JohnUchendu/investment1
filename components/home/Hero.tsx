@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import Particles from "react-tsparticles";
+import Particles from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
 function AnimatedNumber({ targetNumber, duration = 2000 }: { targetNumber: number; duration?: number }) {
