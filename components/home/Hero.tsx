@@ -51,7 +51,7 @@ export function Hero() {
                 enable: true,
                 mode: "repulse",
               },
-              resize: true,
+              
             },
             modes: {
               repulse: {
