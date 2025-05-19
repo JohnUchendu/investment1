@@ -144,13 +144,177 @@
 //   return <div ref={chartContainerRef} className="w-full h-[400px]" />;
 // }
 
-import React from 'react'
-import MaintenancePage from './Maintenance'
+// import React from 'react'
+// import MaintenancePage from './Maintenance'
 
-const TradingChart = () => {
+// const TradingChart = () => {
+//   return (
+//     <div><MaintenancePage/></div>
+//   )
+// }
+
+// export default TradingChart
+
+"use client";
+
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  FiTrendingUp, 
+  FiDollarSign, 
+  FiCalendar,
+  FiPieChart
+} from "react-icons/fi";
+import TradingViewChartWidget from "./TradingViewChartWidget";
+
+export default function TradingChart() {
+  const [selectedAsset, setSelectedAsset] = useState("BTC");
+
+  // Mock data
+  const assets = [
+    { symbol: "BTC", name: "Bitcoin", value: 45218.32, change: +2.4 },
+    { symbol: "XRP", name: "Ripple", value: 0.5421, change: -0.8 },
+    // { symbol: "ETH", name: "Ethereum", value: 2415.67, change: +1.2 },
+   
+  ];
+
+  const performanceData = {
+    today: +1.2,
+    week: +5.7,
+    
+  };
+
   return (
-    <div><MaintenancePage/></div>
-  )
-}
+    <div className="space-y-6 p-4 text-white">
+      {/* Top Row - 4 Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Assets Card */}
+        <Card className="bg-blue-800 text-white text-xs sm:text-sm gap-2">
+          <CardHeader className="flex flex-row items-center justify-between pb-2 ">
+            <CardTitle className="text-sm">
+              Assets
+            </CardTitle>
+            <FiPieChart className="h-4 w-4 text-white-500" />
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                {assets.map((asset) => (
+                  <div 
+                    key={asset.symbol}
+                    className={`p-2 rounded-md cursor-pointer ${selectedAsset === asset.symbol ? 'bg-blue-800' : 'hover:bg-blue-500'}`}
+                    onClick={() => setSelectedAsset(asset.symbol)}
+                  >
+                    <div className="font-medium">{asset.symbol}</div>
+                    <div className="text-xs sm:text-sm  font-bold">
+                      ${asset.value.toLocaleString()}
+                    </div>
+                    <div className={`text-xs ${asset.change >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                      {asset.change >= 0 ? '+' : ''}{asset.change}%
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="border-l pl-4 ">
+                {/* Placeholder for asset details component */}
+                <div className="text-sm text-white">
+                  {assets.find(a => a.symbol === selectedAsset)?.name} Details
+                </div>
+                {/* You'll replace this with your actual asset details component */}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-export default TradingChart
+        {/* Performance Card */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
+            <CardTitle className="text-sm">
+              Performance
+            </CardTitle>
+            <FiTrendingUp className="h-4 w-4 text-gray-500" />
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <div className="space-y-2">
+                  <div>
+                    <div className="text-xs text-gray-500">Today</div>
+                    <div className={`font-medium ${performanceData.today >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                      {performanceData.today >= 0 ? '+' : ''}{performanceData.today}%
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-xs text-gray-500">This Week</div>
+                    <div className={`font-medium ${performanceData.week >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                      {performanceData.week >= 0 ? '+' : ''}{performanceData.week}%
+                    </div>
+                  </div>
+                  <div>
+                    {/* <div className="text-xs text-gray-500">This Month</div> */}
+                    {/* <div className={`font-medium ${performanceData.month >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                      {performanceData.month >= 0 ? '+' : ''}{performanceData.month}%
+                    </div> */}
+                  </div>
+                </div>
+              </div>
+              <div className="border-l pl-4">
+                {/* Placeholder for performance graph component */}
+                <div className="h-full flex items-center justify-center text-sm text-gray-500">
+                  Performance Graph
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Gains Card */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
+            <CardTitle className="text-sm font-medium">
+              Gains
+            </CardTitle>
+            <FiDollarSign className="h-4 w-4 text-gray-500" />
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              <div className="text-2xl font-bold">$3,245.67</div>
+              <div className="text-sm text-green-500">+12.4% overall</div>
+              <div className="text-xs text-gray-500">Since investment</div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Maturity Card */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between pb-2">
+            <CardTitle className="text-sm font-medium">
+              Maturity
+            </CardTitle>
+            <FiCalendar className="h-4 w-4 text-gray-500" />
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-2">
+              <div className="text-xl font-medium">Dec 15, 2024</div>
+              <div className="text-sm text-gray-600">124 days remaining</div>
+              <div className="text-xs text-blue-500">Auto-renewal enabled</div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Bottom Row - TradingView Chart Card */}
+      <Card className="w-full">
+        <CardHeader>
+          <CardTitle>Market Overview</CardTitle>
+        </CardHeader>
+        <CardContent className="h-[400px]">
+          {/* Placeholder for TradingView component */}
+          <div className="h-full flex items-center justify-center text-gray-500 border rounded-md">
+          <TradingViewChartWidget/>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

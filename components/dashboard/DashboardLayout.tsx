@@ -158,7 +158,7 @@ export default function DashboardLayout({ user }: DashboardLayoutProps) {
   return (
     <>
       <MarketTicker />
-      <div className="flex flex-col md:flex-row h-screen pt-1 bg-gray-100">
+      <div className="flex flex-col md:flex-row pt-1 bg-gray-100">
         {/* Mobile Header */}
         <div className="md:hidden bg-blue-800 text-white p-4 flex justify-between items-center">
           <h2 className="text-xl font-bold">Welcome Frank!</h2>
