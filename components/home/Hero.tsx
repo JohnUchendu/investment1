@@ -45,7 +45,7 @@ export function Hero() {
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col  space-y-6 text-center md:text-left  max-w-4xl mx-auto">
           <motion.h1
-            className="text-2xl sm:text-6xl md:text-8xl lg:text-8xl font-extrabold pt-4 tracking-tight"
+            className="text-5xl sm:text-6xl md:text-8xl lg:text-8xl font-extrabold pt-6 tracking-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0 }}
@@ -55,7 +55,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="max-w-xl text-blue-200 text-md md:text-xl"
+            className="max-w-xl text-blue-200 text-2xl md:text-3xl  pt-10 sm:py-0 md:py-0 lg:py-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 1.8 }}
@@ -66,7 +66,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-wrap  gap-10 text-center sm:text-left md:text-left lg:text-left text-sm md:text:md "
+            className="mt-10 flex flex-wrap  gap-10 text-center sm:text-left md:text-left lg:text-left text-sm md:text:md pt-30  md:pt-0 "
             initial="hidden"
             animate="visible"
             variants={{
