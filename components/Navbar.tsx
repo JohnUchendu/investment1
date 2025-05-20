@@ -215,7 +215,7 @@ export function Navbar() {
                     priority
                   />
                 </div>
-                <span className="ml-2 text-4xl font-semibold hidden sm:inline">
+                <span className="ml-2 text-2xl text-blue-800 font-semibold hidden sm:inline">
                   Seven Points Trading
                 </span>
               </div>
@@ -223,7 +223,7 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center text-2xl space-x-4">
+          <div className="hidden md:flex items-center text-xl space-x-4">
             <Link
               href="/"
               className={`px-3 py-2 rounded-md  font-medium ${
@@ -257,7 +257,7 @@ export function Navbar() {
           </div>
 
           {/* Auth Button */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center text-xl">
             {session ? (
               <button
                 onClick={() => signOut()}

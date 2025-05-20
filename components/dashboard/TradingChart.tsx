@@ -206,7 +206,7 @@ export default function TradingChart() {
                     onClick={() => setSelectedAsset(asset.symbol)}
                   >
                     <div className="font-medium">{asset.symbol}</div>
-                    <div className="text-xs sm:text-sm  font-bold">
+                    <div className="text-2xl  font-bold">
                       ${asset.value.toLocaleString()}
                     </div>
                     <div
@@ -220,12 +220,12 @@ export default function TradingChart() {
                   </div>
                 ))}
               </div>
-              <div className="border-l pl-4 ">
+              {/* <div className="border-l pl-4 ">
                 <div className="text-sm text-gray-500">
                   {assets.find((a) => a.symbol === selectedAsset)?.name} Gains
                 </div>
-                {/* Asset perfomance component */}
-              </div>
+                {/* Asset perfomance component 
+              </div> */}
             </div>
           </CardContent>
         </Card>
@@ -238,7 +238,7 @@ export default function TradingChart() {
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <div className="text-2xl font-bold">$333,245.67</div>
+              <div className="text-2xl font-bold">$0.67</div>
               <div className="text-sm text-blue-500">+12.4% overall</div>
               <div className="text-xs text-gray-500">Since investment</div>
             </div>

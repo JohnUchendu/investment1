@@ -170,13 +170,13 @@ export default function LoginPageClient() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-100 px-4 sm:px-6 lg:px-8">
-      <Card className="w-full max-w-md p-6 shadow-md bg-blue-500 rounded-lg">
+    <div className="min-h-screen flex items-center justify-center bg-blue-800 px-4 sm:px-6 lg:px-8">
+      <Card className="w-full max-w-md p-6 shadow-md bg-gray-100 rounded-lg">
         <CardHeader>
-          <CardTitle className="text-2xl text-center">
+          <CardTitle className="text-2xl text-center text-gray-600">
             Login to Your Account
           </CardTitle>
-          <CardDescription className="text-center text-gray-200">
+          <CardDescription className="text-center text-gray-500">
             Enter your credentials to access your dashboard
           </CardDescription>
         </CardHeader>
@@ -188,7 +188,7 @@ export default function LoginPageClient() {
             </Alert>
           )}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="space-y-2">
+            <div className="space-y-2 text-gray-600">
               <Label htmlFor="email">Email</Label>
               <Input
                 id="email"
@@ -200,7 +200,7 @@ export default function LoginPageClient() {
                 <p className="text-sm text-red-500">{errors.email.message}</p>
               )}
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 text-gray-600">
               <Label htmlFor="password">Password</Label>
               <Input
                 id="password"
@@ -214,7 +214,7 @@ export default function LoginPageClient() {
                 </p>
               )}
             </div>
-            <Button type="submit" className="w-full pointer bg-gray-200">
+            <Button type="submit" className="w-full pointer text-gray-100 hover:text-gray-200 bg-blue-700 hover:bg-blue-800">
               Sign In
             </Button>
           </form>

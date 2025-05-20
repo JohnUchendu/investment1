@@ -228,11 +228,7 @@ function RisingLine() {
 export default function RisingGraphBackground() {
   return (
     <div className="absolute top-0 right-0 w-full h-full z-0">
-      <Canvas
-        camera={{ position: [0, 0, 10], fov: 75 }}
-        style={{ background: "#000" }}
-        gl={{ preserveDrawingBuffer: true }}
-      >
+      <Canvas camera={{ position: [0, 0, 10], fov: 75 }} gl={{ alpha: true }}>
         <Suspense fallback={null}>
           <ambientLight />
           <RisingLine />

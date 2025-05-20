@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 // import RisingGraphBackground from "./RisingGraphBackground";
 // import ParticlesBackground from "./ParticlesBackground";
 
-// import dynamic from "next/dynamic";
+import dynamic from "next/dynamic";
 
-// const RisingGraphBackground = dynamic(() => import("./RisingGraphBackground"), {
-//   ssr: false,
-// });
+const RisingGraphBackground = dynamic(() => import("./RisingGraphBackground"), {
+  ssr: false,
+});
 
 
 function AnimatedNumber({
@@ -40,7 +40,7 @@ function AnimatedNumber({
 
 export function Hero() {
   return (
-    <section className="flex flex-row w-full bg-blue-600  py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
+    <section className="flex flex-row w-full bg-blue-800  py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
       {/* <ParticlesBackground/> */}
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col  space-y-6 text-center md:text-left  max-w-4xl mx-auto">
@@ -66,7 +66,7 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-wrap justify-center gap-10 text-center"
+            className="mt-10 flex flex-wrap  gap-10 text-center sm:text-left md:text-left lg:text-left text-sm md:text:md "
             initial="hidden"
             animate="visible"
             variants={{
@@ -88,7 +88,7 @@ export function Hero() {
               }}
               viewport={{ once: true }}
               >
-                <p className="text-2xl tetx-left font-bold text-white">
+                <p className="text-xl  font-bold text-white">
                   {i === 1 || i === 3 ? "$" : ""}
                   {i === 3 ? "8M" : <AnimatedNumber targetNumber={num} />}
                   {i === 2 || i === 3 ? "+" : ""}
@@ -118,7 +118,7 @@ export function Hero() {
             </Link> */}
         </div>
       </div>
-            {/* <RisingGraphBackground/> */}
+            <RisingGraphBackground/>
     </section>
   );
 }
