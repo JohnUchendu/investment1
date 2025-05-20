@@ -150,8 +150,8 @@ export default function LoginPageClient() {
   } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "frankmuller@yahoo.co.uk",
-      password: "lloydsX20x",
+      email: "",
+      password: "",
     },
   });
 
