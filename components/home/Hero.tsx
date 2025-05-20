@@ -40,7 +40,7 @@ function AnimatedNumber({
 
 export function Hero() {
   return (
-    <section className="flex flex-row w-full bg-blue-800  py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
+    <section className="flex flex-row h-screen w-full bg-blue-800  py-16 md:py-24 lg:py-32 xl:py-48 text-white overflow-hidden">
       {/* <ParticlesBackground/> */}
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col  space-y-6 text-center md:text-left  max-w-4xl mx-auto">
