@@ -120,8 +120,6 @@
 //               Sign In
 //             </Link>
 
-
-            
 //           </div>
 
 //           {/* Mobile menu button */}
@@ -185,7 +183,6 @@
 //     </header>
 //   );
 // }
-
 
 "use client";
 
@@ -276,6 +273,15 @@ export function Navbar() {
                 Sign In
               </Link>
             )}
+
+            {session && (
+              <Link
+                href="/dashboard"
+                className="px-4 py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition"
+              >
+                Dashboard
+              </Link>
+            )}
           </div>
 
           {/* Mobile menu toggle */}
@@ -285,7 +291,11 @@ export function Navbar() {
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
               aria-label="Main menu"
             >
-              {isOpen ? <FiX className="h-6 w-6" /> : <FiMenu className="h-6 w-6" />}
+              {isOpen ? (
+                <FiX className="h-6 w-6" />
+              ) : (
+                <FiMenu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -324,6 +334,16 @@ export function Navbar() {
           >
             Careers
           </Link>
+          {session && (
+            <Link
+              href="/dashboard"
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2 rounded-md text-base font-medium pointer text-blue-600 hover:text-blue-800"
+            >
+              Dashboard
+            </Link>
+          )}
+
           {session ? (
             <button
               onClick={() => {
