@@ -172,8 +172,8 @@ export default function TradingChart() {
 
   // Mock data
   const assets = [
-    { symbol: "BTC", name: "Bitcoin", value: 45218.32, change: +2.4 },
-    { symbol: "XRP", name: "Ripple", value: 0.5421, change: -0.8 },
+    { symbol: "BTC", name: "Bitcoin", value: 1687565.76, change: +2.4 },
+    { symbol: "XRP", name: "Ripple", value: 250635.00, change: -0.8 },
     // { symbol: "ETH", name: "Ethereum", value: 2415.67, change: +1.2 },
   ];
 

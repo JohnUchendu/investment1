@@ -264,14 +264,14 @@ export function Navbar() {
             {session ? (
               <button
                 onClick={() => signOut()}
-                className="px-4 py-2 rounded-md text-sm font-medium text-red-600 hover:text-red-800"
+                className="px-4 py-2 rounded-md text-sm font-medium pointer text-red-600 hover:text-red-800"
               >
                 Sign Out
               </button>
             ) : (
               <Link
                 href="/login"
-                className="px-4 py-2 rounded-md  font-medium text-gray-600 hover:text-gray-900"
+                className="px-4 py-2 rounded-md  pointer font-medium text-gray-600 hover:text-gray-900"
               >
                 Sign In
               </Link>
@@ -296,7 +296,7 @@ export function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
           <Link
             href="/"
-            className={`block px-3 py-2 rounded-md text-base font-medium ${
+            className={`block px-3 py-2 rounded-md text-base font-medium pointer ${
               pathname === "/"
                 ? "bg-gray-100 text-gray-900"
                 : "text-gray-600 hover:text-gray-900"
@@ -306,7 +306,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/about"
-            className={`block px-3 py-2 rounded-md text-base font-medium ${
+            className={`block px-3 py-2 rounded-md text-base font-medium pointer ${
               pathname === "/about"
                 ? "bg-gray-100 text-gray-900"
                 : "text-gray-600 hover:text-gray-900"
@@ -316,7 +316,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/careers"
-            className={`block px-3 py-2 rounded-md text-base font-medium ${
+            className={`block px-3 py-2 rounded-md text-base font-medium  pointer${
               pathname === "/careers"
                 ? "bg-gray-100 text-gray-900"
                 : "text-gray-600 hover:text-gray-900"
@@ -330,7 +330,7 @@ export function Navbar() {
                 setIsOpen(false);
                 signOut();
               }}
-              className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:text-red-800"
+              className="block w-full text-left px-3 py-2 rounded-md text-base  pointer font-medium text-red-600 hover:text-red-800"
             >
               Sign Out
             </button>
@@ -338,7 +338,7 @@ export function Navbar() {
             <Link
               href="/login"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900"
+              className="block px-3 py-2 rounded-md text-base font-medium pointer text-gray-600 hover:text-gray-900"
             >
               Sign In
             </Link>

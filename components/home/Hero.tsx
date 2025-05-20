@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import RisingGraphBackground from "./RisingGraphBackground";
 // import ParticlesBackground from "./ParticlesBackground";
 
 function AnimatedNumber({
@@ -34,6 +35,7 @@ export function Hero() {
   return (
     <section className="w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-white via-blue-500/10 to-blue-500/0 text-white overflow-hidden">
       {/* <ParticlesBackground/> */}
+      <RisingGraphBackground/>
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-6 text-center  max-w-4xl mx-auto">
           <motion.h1

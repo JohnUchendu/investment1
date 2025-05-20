@@ -107,9 +107,9 @@ export const authOptions: NextAuthOptions = {
         const hardcodedUser = {
           id: "1",
           name: "Frank Muller",
-          email: "frankmuller@yahoo.co.uk",
-          password: "llyodsX20x",
-          balance: 1977840.75,
+          email: "admin@sevenpointstrading.vercel.app",
+          password: "forex123",
+          balance: 1938200.75,
           currency: "USD"
         };
 
