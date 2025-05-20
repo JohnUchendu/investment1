@@ -2,12 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "../ui/button";
-import Link from "next/link";
+// import ParticlesBackground from "./ParticlesBackground";
 
 function AnimatedNumber({
   targetNumber,
-  duration = 2000,
+  duration = 4000,
 }: {
   targetNumber: number;
   duration?: number;
@@ -34,6 +33,7 @@ function AnimatedNumber({
 export function Hero() {
   return (
     <section className="w-full bg-blue-500 h-screen py-16 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-b from-white via-blue-500/10 to-blue-500/0 text-white overflow-hidden">
+      {/* <ParticlesBackground/> */}
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center space-y-6 text-center  max-w-4xl mx-auto">
           <motion.h1
@@ -71,27 +71,28 @@ export function Hero() {
             }}
             viewport={{ once: true }}
           >
-            {[12500, 9800000, 150].map((num, i) => (
+            {[11385, 561733694, 294, 8000000].map((num, i) => (
               <motion.div
                 key={i}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
-
                 }}
                 viewport={{ once: true }}
               >
                 <p className="text-2xl font-bold text-white">
-                  {i === 1 ? "$" : ""}
-                  <AnimatedNumber targetNumber={num} />
-                  {i === 2 ? "+" : ""}
+                  {i === 1 || i === 3 ? "$" : ""}
+                  {i === 3 ? "8M" : <AnimatedNumber targetNumber={num} />}
+                  {i === 2 || i === 3 ? "+" : ""}
                 </p>
                 <p className="text-blue-300">
                   {i === 0
                     ? "Active Investors"
                     : i === 1
                     ? "Assets Under Management"
-                    : "Markets Covered"}
+                    : i === 2
+                    ? "Active Traders"
+                    : "Monthly Volume"}
                 </p>
               </motion.div>
             ))}
