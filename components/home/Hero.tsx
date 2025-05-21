@@ -11,7 +11,6 @@ const RisingGraphBackground = dynamic(() => import("./RisingGraphBackground"), {
   ssr: false,
 });
 
-
 function AnimatedNumber({
   targetNumber,
   duration = 4000,
@@ -45,28 +44,28 @@ export function Hero() {
       <div className="px-4 md:px-6 relative z-10">
         <div className="flex flex-col  space-y-6 text-center md:text-left  max-w-4xl mx-auto">
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-8xl lg:text-8xl font-extrabold pt-6 tracking-tight"
+            className="text-4xl sm:text-6xl md:text-8xl lg:text-8xl font-extrabold pt-6 tracking-tight"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0 }}
             viewport={{ once: true }}
-            >
+          >
             Empower Your Wealth with Our Investment Platform
           </motion.h1>
 
           <motion.p
-            className="max-w-xl text-blue-200 text-2xl md:text-3xl  pt-10 sm:py-0 md:py-0 lg:py-0"
+            className="max-w-xl text-blue-200 text-xl md:text-3xl  pt-8 "
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.3, duration: 1.8 }}
             viewport={{ once: true }}
-            >
+          >
             Join thousands of investors growing their wealth through smart
             trading and expert insights.
           </motion.p>
 
           <motion.div
-            className="mt-10 flex flex-wrap  gap-10 text-center sm:text-left md:text-left lg:text-left text-sm md:text:md pt-30  md:pt-0 "
+             className="flex flex-wrap justify-center md:justify-start gap-10 text-center md:text-left text-[14px] md:text-md lg:text-lg pt-50 md:pt-0 lg:pt-0"
             initial="hidden"
             animate="visible"
             variants={{
@@ -78,17 +77,17 @@ export function Hero() {
               },
             }}
             viewport={{ once: true }}
-            >
+          >
             {[11385, 561733694, 294, 8000000].map((num, i) => (
               <motion.div
-              key={i}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              viewport={{ once: true }}
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                viewport={{ once: true }}
               >
-                <p className="text-xl  font-bold text-white">
+                <p className="text-[15px]  md:text-md lg:text-lg font-bold text-white">
                   {i === 1 || i === 3 ? "$" : ""}
                   {i === 3 ? "8M" : <AnimatedNumber targetNumber={num} />}
                   {i === 2 || i === 3 ? "+" : ""}
@@ -118,7 +117,7 @@ export function Hero() {
             </Link> */}
         </div>
       </div>
-            <RisingGraphBackground/>
+      <RisingGraphBackground />
     </section>
   );
 }

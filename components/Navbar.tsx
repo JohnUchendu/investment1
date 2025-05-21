@@ -234,7 +234,7 @@ export function Navbar() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               href="/about"
               className={`px-3 py-2 rounded-md font-medium ${
                 pathname === "/about"
@@ -253,7 +253,7 @@ export function Navbar() {
               }`}
             >
               Careers
-            </Link>
+            </Link> */}
           </div>
 
           {/* Auth Button */}
@@ -314,7 +314,7 @@ export function Navbar() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             href="/about"
             className={`block px-3 py-2 rounded-md text-base font-medium pointer ${
               pathname === "/about"
@@ -333,7 +333,7 @@ export function Navbar() {
             }`}
           >
             Careers
-          </Link>
+          </Link> */}
           {session && (
             <Link
               href="/dashboard"

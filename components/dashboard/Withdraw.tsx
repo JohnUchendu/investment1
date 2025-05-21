@@ -255,7 +255,7 @@ export default function Withdraw() {
                 <FiDollarSign className="text-blue-600" />
                 <span className="text-gray-600">Available Balance:</span>
               </div>
-              <div className="font-bold">$12,450.75</div>
+              <div className="font-bold text-gray-800">$1,748,233.00</div>
             </div>
           </div>
 
