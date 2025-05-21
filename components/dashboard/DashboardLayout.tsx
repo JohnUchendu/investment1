@@ -161,7 +161,7 @@ export default function DashboardLayout({ user }: DashboardLayoutProps) {
       <div className="flex flex-col md:flex-row pt-1 bg-gray-100">
         {/* Mobile Header */}
         <div className="md:hidden bg-blue-800 text-white p-4 flex justify-between items-center">
-          <h2 className="text-xl font-bold">Welcome Back!</h2>
+          <h2 className="text-xl font-bold">Welcome Back, Eric!</h2>
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 focus:outline-none"
