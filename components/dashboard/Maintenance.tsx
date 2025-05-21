@@ -55,7 +55,7 @@ export default function MaintenancePage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
               <button
-                onClick={() => router.push('tel:+17723084681')}
+                onClick={() => router.push('mailto:support@sevenpointstrading.com')}
                 className="flex items-center justify-center space-x-2 bg-blue-700 hover:bg-blue-600 transition-colors py-3 px-6 rounded-lg"
               >
                 <FaEnvelope />
