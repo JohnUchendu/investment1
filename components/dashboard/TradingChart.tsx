@@ -292,8 +292,8 @@ export default function TradingChart() {
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <div className="text-xl font-bold">June 22, 2025</div>
-              <div className="text-sm text-gray-600">32 days remaining</div>
+              <div className="text-xl font-bold">August 25, 2025</div>
+              <div className="text-sm text-gray-600">Some days remaining</div>
               <div className="text-xs text-blue-500">Auto-renewal enabled</div>
             </div>
           </CardContent>
