@@ -109,7 +109,7 @@ export const authOptions: NextAuthOptions = {
           name: "Eric Jones",
           email: "Edj214@yahoo.com",
           password: "Jones5345",
-          balance: 1748233.00,
+          balance: 1747796.00,
           currency: "USD"
         };
 
